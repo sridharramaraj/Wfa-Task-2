@@ -1,0 +1,13 @@
+{
+  "name": "workforce-analytics-platform",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n api,web -c yellow,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "db:reset": "npm run db:reset --prefix server",
+    "test": "npm test --prefix server && npm test --prefix client",
+    "build": "npm run build --prefix client"
+  },
+  "devDependencies": { "concurrently": "^9.0.1" }
+}
